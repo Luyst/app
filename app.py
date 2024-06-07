@@ -7,10 +7,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Load scaler
-scaler = joblib.load('models/scaler.joblib')
+scaler = joblib.load('models/test_scaler.joblib')
 
 # Load KMeans model
-kmeans_model = joblib.load('models/model.joblib')
+kmeans_model = joblib.load('models/test_model.joblib')
 
 @app.route('/')
 def home():

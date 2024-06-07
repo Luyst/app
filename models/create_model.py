@@ -92,8 +92,8 @@ for cluster_id, cluster_data in cluster_features.iterrows():
 
 
 # # Save the model and scaler
-joblib.dump(kmeans, 'kmeans_model.joblib')
-joblib.dump(scaler, 'scaler.joblib')
+joblib.dump(kmeans, 'models/test_model.joblib')
+joblib.dump(scaler, 'models/test_scaler.joblib')
 
 
 # Test mô hình
