@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 import joblib
 import numpy as np
@@ -19,27 +19,28 @@ kmeans_model = joblib.load('models/model.joblib')
 # Load cluster information from JSON file
 with open('models/cluster.json', 'r', encoding='utf-8') as file:
     cluster_data = json.load(file)
-    
+
 @app.route('/')
 def home():
-    return render_template('index.html',cluster_infor=cluster_data.get("undenfined"))
+    return render_template('index.html', cluster_infor=cluster_data.get("undenfined"))
 
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
         # Lấy dữ liệu từ form
-        Education = (request.form['Education'])
-        Marital_Status = (request.form['Marital_Status'])
-        Income = float(request.form['Income'])
-        Wines = float(request.form['Wines'])
-        Fruits = float(request.form['Fruits'])
-        Meat = float(request.form['Meat'])
-        Fish = float(request.form['Fish'])
-        Sweet = float(request.form['Sweet'])
-        Gold = float(request.form['Gold'])
-        Age = int(request.form['Age'])
-        Children = int(request.form['Children'])
-        Expenses = int(request.form['Expenses'])
+        data = request.json
+        Education = data['Education']
+        Marital_Status = data['Marital_Status']
+        Income = float(data['Income'])
+        Wines = float(data['Wines'])
+        Fruits = float(data['Fruits'])
+        Meat = float(data['Meat'])
+        Fish = float(data['Fish'])
+        Sweet = float(data['Sweet'])
+        Gold = float(data['Gold'])
+        Age = int(data['Age'])
+        Children = int(data['Children'])
+        Expenses = int(data['Expenses'])
 
         # Chuyển dữ liệu về dạng chuẩn
         education_map = {
@@ -65,12 +66,18 @@ def predict():
         cluster = kmeans_model.predict(data)
 
         # Lấy thông tin cụm
-        cluster_infor = cluster_data.get(str(cluster[0]),cluster_data.get("undenfined"))
+        cluster_infor = cluster_data.get(str(cluster[0]), cluster_data.get("undenfined"))
 
-        return render_template('index.html', cluster=cluster[0],cluster_infor=cluster_infor)
+        # Convert numpy integer to Python int
+        result = {
+            "cluster": int(cluster[0]),
+            "cluster_infor": cluster_infor
+        }
+
+        return jsonify(result)
 
     except Exception as e:
-        return str(e)
+        return jsonify({"error": str(e)})
 
 def open_browser():
     webbrowser.open_new('http://127.0.0.1:5500/')

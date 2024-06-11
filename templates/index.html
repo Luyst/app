@@ -1,159 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <title>Prediction Form</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
+            * {
+                padding: 0;
+                margin: 0;
+                color: #ffff;
+                font-family: "Quicksand", san-serif;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>Prediction Form</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-        * {
-            padding: 0;
-            margin: 0;
-            color: #ffff;
-            font-family: 'Quicksand', san-serif;
-        }
-        
-        body {
-            background: rgb(34, 195, 128);
-            background: linear-gradient(0deg, rgba(34, 195, 128, 1) 0%, rgba(106, 189, 185, 1) 56%, rgba(45, 206, 253, 1) 100%);
-            height: 100vh;
-        }
-        
-        .container {
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            padding: 30px;
-            margin: auto;
-            height: 85%;
-            max-width: 1000px;
-            /* Điều chỉnh kích thước tối đa của container */
-        }
-        
-        .title {
-            padding: 50px;
-            padding-top: 0px;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-top: 30vh;
-            padding: 25px;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        hr {
-            border-width: 5px;
-            border-color: rgb(34, 195, 128);
-            border-color: linear-gradient(0deg, rgba(34, 195, 128, 1) 0%, rgba(106, 189, 185, 1) 56%, rgba(45, 206, 253, 1) 100%);
-        }
-        
-        option {
-            color: black
-        }
-        
-        h3 {
-            text-align: center;
-        }
-    </style>
+            body {
+                background: rgb(34, 195, 128);
+                background: linear-gradient(0deg, rgba(34, 195, 128, 1) 0%, rgba(106, 189, 185, 1) 56%, rgba(45, 206, 253, 1) 100%);
+                height: 100vh;
+            }
 
-</head>
+            .container {
+                border-radius: 15px;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                padding: 30px;
+                margin: auto;
+                height: 85%;
+                max-width: 1000px;
+                /* Điều chỉnh kích thước tối đa của container */
+            }
 
-<body>
-    <div class="container mt-5">
-        <h2 class="mb-4 title">Prediction Form</h2>
-        <hr>
-        <div class="row">
-            <div class="col-12">
-                <form action="/predict" method="post">
-                    <div class="row">
-                        <div class="row col-6">
-                            <h3 class="col-12">Thông tin cá nhân</h3>
-                            <div class="form-group col-6">
-                                <label for="Education">Học vấn:</label>
-                                <select class="form-control" id="Education" name="Education">
-                                    <option value="Graduation">Graduation</option>
-                                    <option value="PhD">PhD</option>
-                                    <option value="Master">Master</option>
-                                    <option value="Basic">Basic</option>
-                                </select>
+            .title {
+                padding: 50px;
+                padding-top: 0px;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-top: 30vh;
+                padding: 25px;
+                display: inline-block;
+                width: 100%;
+            }
+
+            hr {
+                border-width: 5px;
+                border-color: rgb(34, 195, 128);
+                border-color: linear-gradient(0deg, rgba(34, 195, 128, 1) 0%, rgba(106, 189, 185, 1) 56%, rgba(45, 206, 253, 1) 100%);
+            }
+
+            option {
+                color: black;
+            }
+
+            h3 {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container mt-5">
+            <h2 class="mb-4 title">Prediction Form</h2>
+            <hr />
+            <div class="row">
+                <div class="col-12">
+                    <form>
+                        <div class="row">
+                            <div class="row col-6">
+                                <h3 class="col-12">Thông tin cá nhân</h3>
+                                <div class="form-group col-6">
+                                    <label for="Education">Học vấn:</label>
+                                    <select class="form-control" id="Education" name="Education" required>
+                                        <option value="Graduation">Graduation</option>
+                                        <option value="PhD">PhD</option>
+                                        <option value="Master">Master</option>
+                                        <option value="Basic">Basic</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Marital_Status">Hôn nhân:</label>
+                                    <select class="form-control" id="Marital_Status" name="Marital_Status" required>
+                                        <option value="In relationship">Có gia đình</option>
+                                        <option value="Single">Độc thân</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Income">Thu nhập:</label>
+                                    <input type="number" class="form-control" value="0" id="Income" name="Income" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Age">Tuổi:</label>
+                                    <input type="number" value="18" class="form-control" id="Age" name="Age" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Children">Số con cái:</label>
+                                    <input type="number" class="form-control" value="0" id="Children" name="Children" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Expenses">Chi tiêu:</label>
+                                    <input type="number" class="form-control" value="0" id="Expenses" name="Expenses" required />
+                                </div>
                             </div>
-                            <div class="form-group col-6">
-                                <label for="Marital_Status">Hôn nhân:</label>
-                                <select class="form-control" id="Marital_Status" name="Marital_Status">
-                                    <option value="In relationship">Có gia đình</option>
-                                    <option value="Single">Độc thân</option>
-                                    
-                                </select>
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Income">Thu nhập:</label>
-                                <input type="number" class="form-control" value="0" id="Income" name="Income">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Age">Tuổi:</label>
-                                <input type="number" value="18" class="form-control" id="Age" name="Age">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Children">Số con cái:</label>
-                                <input type="number" class="form-control" value="0" id="Children" name="Children">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Expenses">Chi tiêu:</label>
-                                <input type="number" class="form-control" value="0" id="Expenses" name="Expenses">
+                            <div class="row col-6">
+                                <h3 class="col-12">Thông tin mua hàng</h3>
+                                <div class="form-group col-6">
+                                    <label for="Wines">Rượu:</label>
+                                    <input type="number" class="form-control" value="0" id="Wines" name="Wines" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Fruits">Trái cây:</label>
+                                    <input type="number" class="form-control" value="0" id="Fruits" name="Fruits" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Meat">Thịt:</label>
+                                    <input type="number" class="form-control" value="0" id="Meat" name="Meat" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Fish">Cá:</label>
+                                    <input type="number" class="form-control" value="0" id="Fish" name="Fish" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Sweet">Đồ ngọt:</label>
+                                    <input type="number" class="form-control" value="0" id="Sweet" name="Sweet" required />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="Gold">Vàng:</label>
+                                    <input type="number" class="form-control" value="0" id="Gold" name="Gold" required />
+                                </div>
                             </div>
                         </div>
-                        <div class="row col-6">
-                            <h3 class="col-12">Thông tin mua hàng</h3>
-                            <div class="form-group col-6">
-                                <label for="Wines">Rượu:</label>
-                                <input type="number" class="form-control" value="0" id="Wines" name="Wines">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Fruits">Trái cây:</label>
-                                <input type="number" class="form-control" value="0" id="Fruits" name="Fruits">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Meat">Thịt:</label>
-                                <input type="number" class="form-control" value="0" id="Meat" name="Meat">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Fish">Cá:</label>
-                                <input type="number" class="form-control" value="0" id="Fish" name="Fish">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Sweet">Đồ ngọt:</label>
-                                <input type="number" class="form-control" value="0" id="Sweet" name="Sweet">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="Gold">Vàng:</label>
-                                <input type="number" class="form-control" value="0" id="Gold" name="Gold">
-                            </div>
-                        </div>
-                    </div>
 
-                    <button type="submit" class="btn btn-primary">Dự đoán</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Dự đoán</button>
+                    </form>
+                </div>
+                <div class="col-12 result">
+                    <!-- The result will be displayed here -->
+                </div>
             </div>
-            <div class="col-12">
-                {% if cluster is not none %}
-
-                <h2>Cụm khách hàng số: {{ cluster }}</h2>
-                <p><strong>Đặc điểm chung:</strong> {{ cluster_infor.name }}</p>
-                <p><strong>Thu nhập và chi tiêu:</strong> {{ cluster_infor.income_expenditure }}</p>
-                <p><strong>Học vấn:</strong> {{ cluster_infor.education }}</p>
-                <p><strong>Tình trạng hôn nhân:</strong> {{ cluster_infor.marital_status }}</p>
-                <p><strong>Tuổi:</strong> {{ cluster_infor.age_range }}</p>
-                <p><strong>Số lượng con cái:</strong> {{ cluster_infor.children_count }}</p>
-                {% endif %}
-            </div>
-
         </div>
-
-    </div>
-</body>
-
+        <script src="../static/script.js"></script>
+    </body>
 </html>
