@@ -10,8 +10,8 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-# Load scaler
-scaler = joblib.load('models/scaler.joblib')
+# # Load scaler
+# scaler = joblib.load('models/scaler.joblib')
 
 # Load KMeans model
 kmeans_model = joblib.load('models/model.joblib')

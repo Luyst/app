@@ -1,5 +1,5 @@
 {
-    "0": {
+    "3": {
         "name": "Khách Hàng Tiết Kiệm",
         "income_expenditure": "Thu nhập và chi tiêu thấp nhất",
         "education": "Chủ yếu là tốt nghiệp đại học, một số ít có trình độ cơ bản và Thạc sĩ, rất ít Tiến sĩ",
@@ -7,7 +7,7 @@
         "age_range": "Từ 30 đến 50 tuổi",
         "children_count": "Có 1-2 con"
     },
-    "1": {
+    "0": {
         "name": "Khách Hàng Cao Cấp",
         "income_expenditure": "Thu nhập và chi tiêu cao nhất",
         "education": "Chủ yếu là tốt nghiệp đại học, một số có trình độ cơ bản và Thạc sĩ, rất ít Tiến sĩ",
@@ -23,7 +23,7 @@
         "age_range": "Từ 40 đến 60 tuổi",
         "children_count": "Có 1-2 con"
     },
-    "3": {
+    "1": {
         "name": "Khách Hàng Trung Lưu",
         "income_expenditure": "Thu nhập và chi tiêu trung bình thấp",
         "education": "Chủ yếu là Thạc sĩ, một số tốt nghiệp đại học, một số ít Tiến sĩ, rất ít cơ bản",
