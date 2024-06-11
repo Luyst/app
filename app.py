@@ -5,6 +5,7 @@ import numpy as np
 import webbrowser
 import threading
 import os
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -15,9 +16,13 @@ scaler = joblib.load('models/scaler.joblib')
 # Load KMeans model
 kmeans_model = joblib.load('models/model.joblib')
 
+# Load cluster information from JSON file
+with open('models/cluster.json', 'r', encoding='utf-8') as file:
+    cluster_data = json.load(file)
+    
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html',cluster_infor=cluster_data.get("undenfined"))
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -59,17 +64,10 @@ def predict():
         # Dự đoán nhóm phân cụm cho dữ liệu
         cluster = kmeans_model.predict(data)
 
-        # # Đề xuất sản phẩm dựa trên cụm
-        # recommendations = {
-        #     0: 'Wines, Fish, Gold',
-        #     1: 'Wines, Fish, Gold',
-        #     2: 'Wines, Fish, Gold',
-        #     3: 'Wines, Fish, Gold',
-        # }
+        # Lấy thông tin cụm
+        cluster_infor = cluster_data.get(str(cluster[0]),cluster_data.get("undenfined"))
 
-        # recommendation = recommendations.get(cluster[0], 'Không có đề xuất')
-
-        return render_template('index.html', cluster=cluster[0])
+        return render_template('index.html', cluster=cluster[0],cluster_infor=cluster_infor)
 
     except Exception as e:
         return str(e)

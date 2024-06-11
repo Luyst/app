@@ -1,0 +1,42 @@
+{
+    "0": {
+        "name": "Khách Hàng Tiết Kiệm",
+        "income_expenditure": "Thu nhập và chi tiêu thấp nhất",
+        "education": "Chủ yếu là tốt nghiệp đại học, một số ít có trình độ cơ bản và Thạc sĩ, rất ít Tiến sĩ",
+        "marital_status": "Chủ yếu đã kết hôn",
+        "age_range": "Từ 30 đến 50 tuổi",
+        "children_count": "Có 1-2 con"
+    },
+    "1": {
+        "name": "Khách Hàng Cao Cấp",
+        "income_expenditure": "Thu nhập và chi tiêu cao nhất",
+        "education": "Chủ yếu là tốt nghiệp đại học, một số có trình độ cơ bản và Thạc sĩ, rất ít Tiến sĩ",
+        "marital_status": "Có cả độc thân và đã kết hôn",
+        "age_range": "Trải rộng ở mọi độ tuổi, nhưng chủ yếu là từ 30 đến 50 tuổi",
+        "children_count": "Không có con hoặc có 1 con"
+    },
+    "2": {
+        "name": "Khách Hàng Tri Thức Cao",
+        "income_expenditure": "Thu nhập và chi tiêu trung bình đến cao",
+        "education": "Chủ yếu là Tiến sĩ, một số ít tốt nghiệp đại học và Thạc sĩ, rất ít cơ bản",
+        "marital_status": "Chủ yếu đã kết hôn",
+        "age_range": "Từ 40 đến 60 tuổi",
+        "children_count": "Có 1-2 con"
+    },
+    "3": {
+        "name": "Khách Hàng Trung Lưu",
+        "income_expenditure": "Thu nhập và chi tiêu trung bình thấp",
+        "education": "Chủ yếu là Thạc sĩ, một số tốt nghiệp đại học, một số ít Tiến sĩ, rất ít cơ bản",
+        "marital_status": "Chủ yếu đã kết hôn",
+        "age_range": "Từ 30 đến 50 tuổi",
+        "children_count": "Có từ 1-2 con"
+    },
+    "undenfined": {
+        "name": "",
+        "income_expenditure": "",
+        "education": "",
+        "marital_status": "",
+        "age_range": "",
+        "children_count": ""
+    }
+}

@@ -141,7 +141,13 @@
             <div class="col-12">
                 {% if cluster is not none %}
 
-                <h2>Cụm khách hàng: {{ cluster }}</h2>
+                <h2>Cụm khách hàng số: {{ cluster }}</h2>
+                <p><strong>Đặc điểm chung:</strong> {{ cluster_infor.name }}</p>
+                <p><strong>Thu nhập và chi tiêu:</strong> {{ cluster_infor.income_expenditure }}</p>
+                <p><strong>Học vấn:</strong> {{ cluster_infor.education }}</p>
+                <p><strong>Tình trạng hôn nhân:</strong> {{ cluster_infor.marital_status }}</p>
+                <p><strong>Tuổi:</strong> {{ cluster_infor.age_range }}</p>
+                <p><strong>Số lượng con cái:</strong> {{ cluster_infor.children_count }}</p>
                 {% endif %}
             </div>
 
